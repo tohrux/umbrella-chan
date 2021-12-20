@@ -34,13 +34,25 @@ function getMessageContent(precipPct: number = 0) {
 }
 
 async function main() {
-    const MessageContent = getMessageContent(await fetchPrecipPct())
-    if(MessageContent.length){
-
-    }
+  const MessageContent = getMessageContent(await fetchPrecipPct())
+  if (MessageContent.length) {
+    send(MessageContent)
+  }
 }
-function send(){
-    
+function send(MessageContent: string) {
+  axios({
+    url: `https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${key}`,
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8;',
+    },
+    data: {
+      msgtype: 'markdown',
+      markdown: {
+        content: `>${MessageContent}`,
+      },
+    },
+  })
 }
 
 main()
