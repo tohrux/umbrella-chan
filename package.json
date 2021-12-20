@@ -1,0 +1,26 @@
+{
+  "name": "umbrella-chan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tohrux/umbrella-chan.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tohrux/umbrella-chan/issues"
+  },
+  "homepage": "https://github.com/tohrux/umbrella-chan#readme",
+  "dependencies": {
+    "@types/node": "^17.0.1",
+    "axios": "^0.24.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  }
+}
