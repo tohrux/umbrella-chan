@@ -25,9 +25,9 @@ async function fetchPrecipPct(): Promise<number> {
 }
 
 function getMessageContent(precipPct: number = 0) {
-  const commonPrefix = `今天白天的降雨概率为${precipPct}，`
-  if (precipPct > 30) {
-    return commonPrefix + '出门请记得🌂哦'
+  const commonPrefix = `>米娜桑 ヾ(≧▽≦*)o 💗,早上好!今天<font color="orange">上海</font>白天的降雨概率为<font color="blue">${precipPct}</font>%，`
+  if (precipPct < 30) {
+    return commonPrefix + '出门请记得带上我哦~'
   } else {
     return ''
   }
@@ -39,7 +39,7 @@ async function main() {
     send(MessageContent)
   }
 }
-function send(MessageContent: string) {
+async function send(MessageContent: string) {
   axios({
     url: `https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${key}`,
     method: 'post',
@@ -49,10 +49,10 @@ function send(MessageContent: string) {
     data: {
       msgtype: 'markdown',
       markdown: {
-        content: `>${MessageContent}`,
+        content: MessageContent,
       },
     },
-  })
+  }).then(res=>console.log(res.data)).catch(err=>console.log(err))
 }
 
 main()
