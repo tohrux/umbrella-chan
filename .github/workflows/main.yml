@@ -22,4 +22,4 @@ jobs:
         with:
           node-version: '12.x'
       - run: npm install
-      - run: npm run send ${{ secrets.APP_ID }} ${{secrets.APP_SECRET}} ${{ secrets.WECOM_BOT_KEY }}
+      - run: npm start ${{ secrets.APP_ID }} ${{secrets.APP_SECRET}} ${{ secrets.WECOM_BOT_KEY }}
