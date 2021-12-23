@@ -39,6 +39,7 @@ async function main() {
     send(MessageContent)
   }
 }
+
 async function send(MessageContent: string) {
   axios({
     url: `https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${key}`,
