@@ -52,7 +52,9 @@ async function send(MessageContent: string) {
         content: MessageContent,
       },
     },
-  }).then(res=>console.log(res.data)).catch(err=>console.log(err))
+  })
+    .then((res) => console.log(res.data))
+    .catch((err) => console.log(err))
 }
 
 main()
