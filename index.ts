@@ -31,7 +31,7 @@ async function fetchPrecipPct(): Promise<number[]> {
 enum rainyMsgLevels {
   '可以带上我↖(^ω^)↗' = 1,
   '请带上我(｡ì _ í｡)',
-  '一定要带上我( ´ ▽ ` )ﾉ',
+  '请务必要带上我( ´ ▽ ` )ﾉ',
 }
 function getMessageContent(precipPctArr: number[]) {
   const isNight = new Date().getHours() >= 18
